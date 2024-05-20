@@ -6,6 +6,9 @@
 
 - Project source:
     - [Web tutorial](https://dev.to/dabit3/the-complete-guide-to-full-stack-ethereum-development-3j13)
+    
+- Test network: Sepolia (other test networks on the tutorial no longer exist)
+  - Get Test ETH: [Chainlink](https://faucets.chain.link/)
 
 ### Installed packages (2024)
 
@@ -26,4 +29,5 @@
   
 4. Write the react app in `src/App.js` and run it with `npm start`
 
+5. Deploy the contract to a test network, e.g., Sepolia and check the transaction on [etherscan](https://sepolia.etherscan.io/)
  
