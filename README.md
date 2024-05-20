@@ -20,6 +20,8 @@
 
 ### Workflow (2022)
 
+#### [Tutorial 1](https://dev.to/dabit3/the-complete-guide-to-full-stack-ethereum-development-3j13)
+
 1. Write the contract with Solidity in `Contracts/` and compile it with `npx hardhat compile` to generate ABI.
 
 2. Start the local network with `npx hardhat node`
@@ -30,4 +32,6 @@
 4. Write the react app in `src/App.js` and run it with `npm start`
 
 5. Deploy the contract to a test network, e.g., Sepolia and check the transaction on [etherscan](https://sepolia.etherscan.io/)
+
+6. Deploy own token with/without ERC20 library
  
