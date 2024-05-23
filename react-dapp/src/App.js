@@ -9,7 +9,8 @@ import Token from "./artifacts/contracts/BaoBi.sol/BaoBi.json";
 // import Token from "./artifacts/contracts/Token.sol/Token.json";
 
 // the contract address
-const greeterAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+// change every time when the local network restarts
+const greeterAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
 // const tokenAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
 const tokenAddress = "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318";
 
@@ -30,7 +31,10 @@ function App() {
       const [account] = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
-      const provider = new JsonRpcProvider("http://localhost:8545");
+      // const provider = new JsonRpcProvider("http://localhost:8545");
+      // `BrowserProvider`: interact with browser-based wallets like MetaMask
+      // `JsonRpcProvider`: connect to an Ethereum node using a JSON-RPC
+      const provider = new ethers.BrowserProvider(window.ethereum);
       const contract = new Contract(tokenAddress, Token.abi, provider);
       // call a contract function
       // for an ERC-20 compliant token, the function is built-in
@@ -43,7 +47,8 @@ function App() {
   async function sendCoins() {
     if (typeof window.ethereum !== "undefined") {
       await requestAccount();
-      const provider = new JsonRpcProvider("http://localhost:8545");
+      // const provider = new JsonRpcProvider("http://localhost:8545");
+      const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       const contract = new ethers.Contract(tokenAddress, Token.abi, signer);
       // also built-in for ERC-20 tokens
@@ -56,7 +61,8 @@ function App() {
   // call the smart contract, read the current greeting value
   async function fetchGreeting() {
     if (typeof window.ethereum !== "undefined") {
-      const provider = new JsonRpcProvider("http://localhost:8545");
+      // const provider = new JsonRpcProvider("http://localhost:8545");
+      const provider = new ethers.BrowserProvider(window.ethereum);
       const contract = new Contract(greeterAddress, Greeter.abi, provider);
       // // not work for ethers v6
       // // const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -76,7 +82,8 @@ function App() {
     if (typeof window.ethereum !== "undefined") {
       await requestAccount();
       // the local network runs on port 8545
-      const provider = new JsonRpcProvider("http://localhost:8545");
+      // const provider = new JsonRpcProvider("http://localhost:8545");
+      const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       // need to wait first
       // const signer = provider.getSigner();
