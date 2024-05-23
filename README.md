@@ -5,7 +5,7 @@
   - `hardhat` initialized a different project structure, e.g., `ignition/` instead of `scripts/`
 
 - Project source:
-    - [Web tutorial](https://dev.to/dabit3/the-complete-guide-to-full-stack-ethereum-development-3j13)
+    - [Web tutorial](https://dev.to/edge-and-node/the-complete-guide-to-full-stack-web3-development-4g74)
     
 - Test network: Sepolia (other test networks on the tutorial no longer exist)
   - Get Test ETH: [Chainlink](https://faucets.chain.link/)
@@ -35,3 +35,13 @@
 
 6. Deploy own token with/without ERC20 library
  
+#### [Tutorial 2](https://dev.to/dabit3/building-scalable-full-stack-apps-on-ethereum-with-polygon-2cfb)
+
+1. write a simple NFT market contract that inherits ERF721 standard and test its functionalities with `npx hardhat test`
+
+#### [Tutorial 3](https://dev.to/dabit3/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291)
+
+#### [Tutorial 4](https://dev.to/edge-and-node/the-complete-guide-to-full-stack-web3-development-4g74)
+
+
+
