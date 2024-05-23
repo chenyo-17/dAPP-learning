@@ -1,9 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 import { useState } from "react";
 import { ethers } from "ethers"; // not work for ethers v6
-import { JsonRpcProvider, Contract } from "ethers";
+import { Contract } from "ethers";
 import Greeter from "./artifacts/contracts/Greeter.sol/Greeter.json";
 import Token from "./artifacts/contracts/BaoBi.sol/BaoBi.json";
 // import Token from "./artifacts/contracts/Token.sol/Token.json";
