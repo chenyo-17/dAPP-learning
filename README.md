@@ -3,6 +3,7 @@
 - This is a self-learning project to understand the development stack of dAPP. Note that this tutorial was published in 2022 and much information is out-of-date:
   - `ethers.js v6` changed many function APIs compared to `ethers.js v5` in 2022.
   - `hardhat` initialized a different project structure, e.g., `ignition/` instead of `scripts/`
+  - Before restarting `npx hardhat node`, if some transactions were recorded in the Metamask on any account, one needs to first change the Metamask to a different network and then changes back after the node is running. Otherwise the node will report block number error. ([source](https://ethereum.stackexchange.com/questions/109625/received-invalid-block-tag-87-latest-block-number-is-0?newreg=3008b56bec3649d3901e0321240fbf22))
 
 - Project source:
     - [Web tutorial](https://dev.to/edge-and-node/the-complete-guide-to-full-stack-web3-development-4g74)
@@ -37,7 +38,12 @@
  
 #### [Tutorial 2](https://dev.to/dabit3/building-scalable-full-stack-apps-on-ethereum-with-polygon-2cfb)
 
-1. write a simple NFT market contract that inherits ERF721 standard and test its functionalities with `npx hardhat test`
+1. Write a simple NFT market contract that inherits ERF721 standard and test its functionalities with `npx hardhat test`
+
+2. Deploy the contract to the local network and write a `next` app to upload tokens on IPFS.
+  - `ipfs.infura.io` in the tutorial does not exist
+  - `pinata`'s API allows uploading JSON, but always has the `Invalid request` error when uploading a file, both with `curl` and with the API. Simply uploading the file via its website does not return the correct `tokenURI`.
+  - there are other [public gateways](https://ipfs.github.io/public-gateway-checker/), but I always get error for `Cross-Origin Request Blocked: CORS header missing`.
 
 #### [Tutorial 3](https://dev.to/dabit3/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291)
 
